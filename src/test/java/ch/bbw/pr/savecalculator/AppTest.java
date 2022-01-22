@@ -42,7 +42,7 @@ public class AppTest
         assertEquals(15, test.subtraktion(minuend1, minuend2));
     }
 
-    // 8 Testfälle für die Addition
+    // 8 Testfälle für die Addition:
 
     //erster Test
     @Test
@@ -108,5 +108,71 @@ public class AppTest
         test.summe(summand1, summand2);
     }
 
+    // 8 Testfälle für die Subtraktion:
+
+
+    //erster Test
+    @Test
+    public void testSubtraktionZweiPositiveIsOk02() {
+        int minuend1 = 50;
+        int minuend2 = 10;
+        assertEquals(40, test.subtraktion(minuend1, minuend2));
+    }
+
+    //zweiter Test
+    @Test
+    public void testSubtraktionZweiPositiveIsOk03() {
+        int minuend1 = 10;
+        int minuend2 = 30;
+        assertEquals(-20, test.subtraktion(minuend1, minuend2));
+    }
+
+    //dritter Test
+    @Test
+    public void testSubtraktionEinePositiveZahlEineNegativeZahlIsOk() {
+        int minuend1 = 80;
+        int minuend2 = -20;
+        assertEquals(100, test.subtraktion(minuend1, minuend2));
+    }
+
+    //vierter Test
+    @Test
+    public void testSubtraktionEinePositiveZahlEineNegativeZahlIsOk02() {
+        int minuend1 = -88;
+        int minuend2 = 10;
+        assertEquals(-98, test.subtraktion(minuend1, minuend2));
+    }
+
+    //fünfter Test
+    @Test
+    public void testSubtraktionMitNullIsOk02() {
+        int minuend1 = 14;
+        int minuend2 = 0;
+        assertEquals(14, test.subtraktion(minuend1, minuend2));
+    }
+
+    //sechster Test
+    @Test
+    public void testSubtraktionMitDerGrösstenZahlAnDerGernzeDesZahlenbereichesIsOk() {
+        int minuend1 = Integer.MAX_VALUE;
+        int minuend2 = 40;
+        test.subtraktion(minuend1, minuend2);
+    }
+
+    //siebter Test
+    @Test  (expected = ArithmeticException.class)
+    public void testSubtraktionMitDerKleinstenZahlAnDerGernzeDesZahlenbereichesIsOk() {
+        int minuend1 = Integer.MIN_VALUE;
+        int minuend2 = 40;
+        test.subtraktion(minuend1, minuend2);
+    }
+
+    //achter Test
+    @Test
+    public void testSubtraktionZweiNegativeZahlenIsOk02() {
+        int minuend1 = -22;
+        int minuend2 = -22;
+        assertEquals(0, test.subtraktion(minuend1, minuend2));
+    }
 }
 
