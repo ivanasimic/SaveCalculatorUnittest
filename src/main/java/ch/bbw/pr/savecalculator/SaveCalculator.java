@@ -27,26 +27,24 @@ public class SaveCalculator {
 		return minuend1 - minuend2;
 	}
 
-	public int division(int value1, int value2)
+	public int division(int dividend1 , int dividend2)
 	{
-		long value = (long) value1 / (long) value2;
+		long value = (long) dividend1 / (long) dividend2;
 		if ((value > Integer.MAX_VALUE) || (value < Integer.MIN_VALUE)){
 			throw new ArithmeticException();
-		}else if(value2 == 0){
+		}else if(dividend2 == 0){
 			throw new ArithmeticException();
 		}else {
-			return value1 / value2;
+			return dividend1 / dividend2;
 		}
 	}
 
-
-
-	private double multiplication(Integer value1, Integer value2) throws ArithmeticException
+	private double multiplication(Integer faktoren1, Integer faktoren2) throws ArithmeticException
 	{
-		long value = (long) value1 * (long) value2;
+		long value = (long) faktoren1 * (long) faktoren2;
 		if ((value > Integer.MAX_VALUE) || (value < Integer.MIN_VALUE)){
 			throw new ArithmeticException();
 		}
-		return value1 * value2;
+		return faktoren1 * faktoren2;
 	}
 }
