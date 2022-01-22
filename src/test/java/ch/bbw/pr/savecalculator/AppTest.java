@@ -174,5 +174,71 @@ public class AppTest
         int minuend2 = -22;
         assertEquals(0, test.subtraktion(minuend1, minuend2));
     }
+
+    // 8 Testfälle für die Division:
+
+    //erster Test
+    @Test
+    public void testDivisionZweiPositiveZahlenIsOk() {
+        int dividend1 = 15;
+        int dividend2 = 5;
+        assertEquals(3, test.division(dividend1, dividend2));
+    }
+
+    //zweiter Test
+    @Test
+    public void testDivisionEineNegativeZahlnIsOk() {
+        int dividend1 = 80;
+        int dividend2 = -40;
+        assertEquals(-2, test.division(dividend1, dividend2));
+    }
+
+    //dritter Test
+    @Test
+    public void testDivisionZweiNegativeZahlenIsOk() {
+        int dividend1 = -64;
+        int dividend2 = -8;
+        assertEquals(8, test.division(dividend1, dividend2));
+    }
+
+    //vierter Test
+    @Test (expected = ArithmeticException.class)
+    public void testDivisionMitNullIsOk() {
+        int dividend1 = 4;
+        int dividend2 = 0;
+        test.division(dividend1, dividend2);
+    }
+
+    //fünfter Test
+    @Test
+    public void testDivisionMitDerGrösstenZahlAnDerGernzeDesZahlenbereichesIsOk() {
+        int dividend1 = Integer.MAX_VALUE;
+        int dividend2 = 5;
+        test.division(dividend1, dividend2);
+    }
+
+    //sechster Test
+    @Test
+    public void testDivisionZweiPositiveZahlenIsOk02() {
+        int dividend1 = 90;
+        int dividend2 = 5;
+        assertEquals(18, test.division(dividend1, dividend2));
+    }
+
+    //siebter Test
+    @Test (expected = ArithmeticException.class)
+    public void testDivisionZweiMallNullZahlenIsOk() {
+        int dividend1 = 0;
+        int dividend2 = 0;
+        test.division(dividend1, dividend2);
+    }
+
+    //achter Test
+    @Test
+    public void testDivisionZweiNegativeZahlenIsOk02() {
+        int dividend1 = -14;
+        int dividend2 = -7;
+        assertEquals(2, test.division(dividend1, dividend2));
+    }
 }
 
